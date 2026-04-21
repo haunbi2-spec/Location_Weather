@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+  <html lang="ko">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Gimhae-si Juseon-ro Weather Monitor</title>
+    <meta name="description" content="Premium weather dashboard for Gimhae-si Juseon-ro.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="style.css">
+      <script src="https://unpkg.com/lucide@latest"></script>
+  </head>
+  <body>
+      <div class="background-overlay"></div>
+
+      <main class="dashboard-container" id="app">
+          <div id="loading" class="loading-screen">
+              <div class="loader"></div>
+              <p>Loading weather data...</p>
+          </div>
+
+          <div id="content" class="content-wrapper hidden">
+              <header class="header">
+                  <div class="location-info">
+                      <h1>Gimhae-si Juseon-ro</h1>
+                      <p id="current-date">Monday, April 21, 2024</p>
+                  </div>
+                  <div class="refresh-btn" id="refresh-btn">
+                      <i data-lucide="rotate-cw"></i>
+                  </div>
+              </header>
+
+              <section class="main-weather">
+                  <div class="weather-focus">
+                      <div class="weather-icon-large">
+                          <i id="main-icon" data-lucide="sun" class="icon-sun"></i>
+                      </div>
+                      <div class="temperature-container">
+                          <span id="current-temp" class="temp-value">24</span>
+                          <span class="temp-unit">&deg;C</span>
+                      </div>
+                      <p id="weather-description" class="weather-status">Clear</p>
+                  </div>
+
+                  <div class="weather-details">
+                      <div class="detail-card glass">
+                          <i data-lucide="droplets"></i>
+                          <div class="detail-info">
+                              <span class="label">Humidity</span>
+                              <span id="humidity" class="value">45%</span>
+                          </div>
+                      </div>
+                      <div class="detail-card glass">
+                          <i data-lucide="wind"></i>
+                          <div class="detail-info">
+                              <span class="label">Wind Speed</span>
+                              <span id="wind-speed" class="value">3.2 m/s</span>
+                          </div>
+                      </div>
+                      <div class="detail-card glass">
+                          <i data-lucide="thermometer"></i>
+                          <div class="detail-info">
+                              <span class="label">Feels Like</span>
+                              <span id="feels-like" class="value">26&deg;C</span>
+                          </div>
+                      </div>
+                      <div class="detail-card glass">
+                          <i data-lucide="cloud-rain"></i>
+                          <div class="detail-info">
+                              <span class="label">Rain Probability</span>
+                              <span id="precipitation" class="value">10%</span>
+                          </div>
+                      </div>
+                  </div>
+              </section>
+
+              <section class="forecast-section">
+                  <h2>Hourly Forecast</h2>
+                  <div class="forecast-scroll" id="hourly-forecast"></div>
+              </section>
+
+              <section class="forecast-section">
+                  <h2>Weekly Forecast</h2>
+                  <div class="daily-list glass" id="daily-forecast"></div>
+              </section>
+          </div>
+      </main>
+
+      <footer class="footer">
+          <p>&copy; 2024 Juseon-ro Weather Monitor. Powered by Open-Meteo.</p>
+      </footer>
+
+      <script src="main.js"></script>
+      <script>
+          lucide.createIcons();
+    </script>
+      </body>
+      </html>
+                          <span id="current-temp" class="temp-value">24</span>
+                          <span class="temp-unit">
